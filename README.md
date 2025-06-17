@@ -50,3 +50,20 @@ This project follows a collaborative team structure with specialized roles:
 | Quality Assurance Engineer | • Test planning • Automated testing • Bug tracking • Performance testing | • Test suites • Bug reports • Load testing results |
 | Technical Writer | • API documentation • System architecture guides • Deployment manuals • Knowledge base | • Swagger/Postman docs<br>• Tutorials • Troubleshooting guides |
 
+## Technology Stack
+
+Django: Forms the application core with MTV architecture, handling URL routing, middleware processing, and view logic
+
+MySQL: Stores relational data including users, listings, bookings, and payments with transaction support
+
+GraphQL: Serves as the primary API layer enabling clients to request exactly the data they need in a single request
+
+Docker: Containerizes the application ensuring consistent environments from development to production
+
+GitHub Actions: Automates testing and deployment workflows triggered by code changes
+
+JWT/OAuth2: Secures API endpoints and enables social login integrations (Google, Facebook)
+
+Redis: Improves performance through caching and enables real-time booking notifications
+
+Nginx: Acts as the entry point handling SSL encryption and distributing traffic to backend services
