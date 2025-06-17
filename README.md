@@ -67,3 +67,17 @@ JWT/OAuth2: Secures API endpoints and enables social login integrations (Google,
 Redis: Improves performance through caching and enables real-time booking notifications
 
 Nginx: Acts as the entry point handling SSL encryption and distributing traffic to backend services
+
+
+## Database Design
+
+The database schema follows a relational model with ACID compliance. Key entities and relationships:
+
+### Entities and Fields
+| Entity | Important Fields | Description |
+|--------|------------------|-------------|
+| **User** | `id`, `email`, `password_hash`, `user_type` (host/guest), `created_at` | Platform users with RBAC permissions |
+| **Property** | `id`, `host_id` (FK→User), `title`, `price_per_night`, `location`, `amenities` | Rental listings with availability calendar |
+| **Booking** | `id`, `property_id` (FK→Property), `guest_id` (FK→User), `check_in`, `check_out`, `total_price`, `status` | Reservation transactions with date constraints |
+| **Review** | `id`, `booking_id` (FK→Booking), `rating` (1-5), `comment`, `created_at` | User feedback tied to completed bookings |
+| **Payment** | `id`, `booking_id` (FK→Booking), `amount`, `payment_method`, `transaction_status`, `receipt_url` | Financial transaction records |
