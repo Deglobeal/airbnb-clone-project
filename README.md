@@ -138,3 +138,27 @@ Offers moderation tools for user management, content oversight, and analytics. P
    *Why crucial*: Mitigates cross-site scripting attacks that could compromise user sessions.
 
 
+## CI/CD Pipeline
+
+### What is CI/CD?
+Continuous Integration (CI) and Continuous Deployment (CD) automate the software delivery process. CI automatically builds and tests code changes, while CD automates deployment to production environments. This pipeline ensures rapid, reliable releases with minimal manual intervention.
+
+### Why CI/CD is Crucial for This Project
+1. **Quality Assurance**: Catches bugs early through automated testing before they reach production  
+2. **Deployment Reliability**: Eliminates human error in deployment processes for critical booking operations  
+3. **Rapid Iteration**: Enables frequent feature releases while maintaining system stability  
+4. **Rollback Safety**: Provides instant fallback to previous versions if deployment fails  
+5. **Environment Consistency**: Ensures identical configurations from development to production  
+
+### Pipeline Implementation
+    A[Code Commit] --> B[CI: GitHub Actions]
+    B --> C[Build Docker Image]
+    B --> D[Run Test Suite]
+    D --> E{Pass?}
+    E -->|Yes| F[CD: Push to Registry]
+    E -->|No| G[Alert Developers]
+    F --> H[Deploy to Staging]
+    H --> I[Smoke Tests]
+    I --> J{Pass?}
+    J -->|Yes| K[Deploy to Production]
+    J -->|No| L[Rollback]
