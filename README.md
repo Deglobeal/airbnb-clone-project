@@ -36,4 +36,17 @@ This project simulates the development of a full-scale booking platform inspired
  Version Control | GitHub                 
  Security        | JWT/OAuth2             
 
+## Team Roles
+
+This project follows a collaborative team structure with specialized roles:
+
+| Role | Responsibilities | Key Deliverables |
+|------|-----------------|-----------------|
+| Project Manager | • Coordinates team workflow • Manages timelines and milestones • Facilitates communication • Risk management | • Project roadmap • Task assignments • Progress reports |
+| Backend Developer | • API development • Business logic implementation • Server configuration • Performance optimization | • RESTful/GraphQL APIs • Microservices • Authentication systems |
+| Database Administrator | • Database design and optimization • Schema migration management • Data security • Query optimization | • ER diagrams • Normalized schemas • Backup strategies |
+| DevOps Engineer | • CI/CD pipeline setup • Infrastructure as Code (IaC) • Deployment automation • Monitoring and logging | • Docker configurations • GitHub Actions workflows • Cloud deployment scripts |
+| Security Specialist | • Vulnerability assessments • Authentication/authorization • Data encryption • Compliance audits | • Security protocols • Penetration test reports • OAuth/JWT implementation |
+| Quality Assurance Engineer | • Test planning • Automated testing • Bug tracking • Performance testing | • Test suites • Bug reports • Load testing results |
+| Technical Writer | • API documentation • System architecture guides • Deployment manuals • Knowledge base | • Swagger/Postman docs<br>• Tutorials • Troubleshooting guides |
 
