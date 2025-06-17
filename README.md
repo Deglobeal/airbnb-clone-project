@@ -108,3 +108,33 @@ Facilitates communication between guests and hosts regarding bookings. Supports 
 
 ### 8. Admin Dashboard
 Offers moderation tools for user management, content oversight, and analytics. Provides system health monitoring and reporting. Allows authorized personnel to resolve disputes and maintain platform quality standards.
+
+
+## API Security
+
+### Core Security Measures
+1. **Authentication**  
+   JWT-based token authentication for all API endpoints.  
+   *Why crucial*: Verifies user identity before granting access to sensitive operations like account modifications or payment processing.
+
+2. **Authorization**  
+   Role-Based Access Control (RBAC) with OAuth2 scopes.  
+   *Why crucial*: Ensures users can only perform actions permitted to their role (guest/host/admin), preventing unauthorized property edits or data access.
+
+3. **Rate Limiting**  
+   Throttling (100 requests/min per IP) using Redis counters.  
+   *Why crucial*: Protects against brute force attacks and DDoS attempts, maintaining API availability for booking operations.
+
+4. **Input Validation**  
+   Strict schema validation for all GraphQL mutations and REST payloads.  
+   *Why crucial*: Prevents SQL injection and NoSQL injection attacks targeting property listings and user data.
+
+5. **HTTPS Enforcement**  
+   TLS 1.3 encryption for all data in transit.  
+   *Why crucial*: Encrypts sensitive information like payment details and credentials during transmission.
+
+6. **Security Headers**  
+   CSP, X-XSS-Protection, and HSTS headers via middleware.  
+   *Why crucial*: Mitigates cross-site scripting attacks that could compromise user sessions.
+
+
