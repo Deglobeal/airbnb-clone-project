@@ -81,3 +81,30 @@ The database schema follows a relational model with ACID compliance. Key entitie
 | **Booking** | `id`, `property_id` (FK→Property), `guest_id` (FK→User), `check_in`, `check_out`, `total_price`, `status` | Reservation transactions with date constraints |
 | **Review** | `id`, `booking_id` (FK→Booking), `rating` (1-5), `comment`, `created_at` | User feedback tied to completed bookings |
 | **Payment** | `id`, `booking_id` (FK→Booking), `amount`, `payment_method`, `transaction_status`, `receipt_url` | Financial transaction records |
+
+
+## Feature Breakdown
+
+### 1. User Management
+Handles user authentication, profiles, and role-based access control. Implements secure registration/login flows with email verification and password recovery. Differentiates between hosts and guests with granular permissions, enabling platform interactions while protecting sensitive operations.
+
+### 2. Property Management
+Allows hosts to create, update, and manage property listings. Includes media uploads, availability calendars, and pricing configurations. Provides CRUD operations for listing details while enforcing ownership verification to prevent unauthorized modifications.
+
+### 3. Booking System
+Manages reservation lifecycle from inquiry to completion. Handles date availability checks, pricing calculations, and conflict prevention. Integrates real-time calendar updates and notifications to ensure booking integrity across user interactions.
+
+### 4. Review & Ratings
+Enables guests to leave feedback on completed stays and hosts to respond. Calculates aggregate property ratings and displays user reviews. Ensures review authenticity by linking to verified bookings only, maintaining platform trustworthiness.
+
+### 5. Payment Processing
+Securely handles financial transactions using payment gateway integration. Manages payment statuses, refunds, and receipts. Encrypts sensitive data and implements PCI-DSS compliant workflows for booking confirmations and host payouts.
+
+### 6. Search & Discovery
+Provides location-based property filtering with map integration. Implements keyword search, date/price filters, and relevance sorting. Uses caching mechanisms to deliver fast search results while handling complex geo-spatial queries.
+
+### 7. Messaging System
+Facilitates communication between guests and hosts regarding bookings. Supports real-time notifications and message history. Enables platform-mediated communication to protect user privacy while maintaining transaction context.
+
+### 8. Admin Dashboard
+Offers moderation tools for user management, content oversight, and analytics. Provides system health monitoring and reporting. Allows authorized personnel to resolve disputes and maintain platform quality standards.
